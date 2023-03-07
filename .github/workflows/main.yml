@@ -1,5 +1,8 @@
-on: push
-name: 🚀 Deploy website on push
+on: 
+  push:
+    branches:
+        - master
+name: Production Deploy
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -12,6 +15,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.3.3
       with:
-        server: ftp://217.21.85.39
+        server: ftp.pandeyprakashan.in
         username: rbssiet_database@pandeywebsolution.in
         password: ${{ secrets.ftp_password }}
